@@ -14,20 +14,31 @@ router.get("/:id", (req, res) =>{
     const id = req.params.id;
     res.json({
         messagge:"Lettura al dettaglio del post" + id,
-        data: posts,
+        data: posts
     });
 });
 // #STORE
 router.post("/", (req, res) =>{
-    res.json("Creo un nuovo post" );
+    res.json({
+        messagge:"Creo un nuovo post",
+        data: posts
+    });
 });
 // #UPDATE
 router.put("/:id", (req, res) =>{
-    res.json("Sostituzione di un post");
+    const id = req.params.id;
+    res.json({
+        messagge:"Sostituzione di un post" + id,
+        data: posts
+    });
 });
 // #MODIFY
 router.patch("/:id", (req, res) =>{
-    res.json("Modifica di un post");
+    const id = req.params.id;
+    res.json({
+        messagge:"Modifica di un post" + id,
+        data: posts
+    });
 });
 // #DESTROY
 router.delete("/:id", (req, res) =>{
