@@ -1,8 +1,8 @@
 const express = require("express");
 const postRouter = require("./routers/posts");
+const {appPort, appUrl} = require("./data/db");
 const app = express();
-const appPort = 3000;
-const appUrl =`http://localhost:${appPort}`;
+
 
 app.use(express.static("public"));
 app.use("/posts",postRouter);
